@@ -1,0 +1,40 @@
+namespace InsightHub.hrMs; //primarily used to categorized diff categories
+using { cuid,managed  } from '@sap/cds/common';
+
+
+entity Students : cuid,managed{
+     email : String;
+     firstName: String;
+     lastName : String;
+     dateSignUp : type of managed:createdAt;
+}
+
+// annotate Students with @(
+//     UI:{
+//         LineItem  : [
+//             {
+//                 Label : 'Student ID',
+//                 Value : ID,
+
+//             },
+
+//             {
+//                 Label:'Email',
+//                 Value : email,
+//             },
+//              {
+//                 Label:'First Name',
+//                 Value : firstName,
+//             },
+//              {
+//                 Label:'Last Name',
+//                 Value : lastName,
+//             },
+//              {
+//                 Label:'Joining Date',
+//                 Value : dateSignUp,
+//             }
+            
+//         ],
+//     }
+// );

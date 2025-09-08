@@ -1,0 +1,117 @@
+_schema-version: 3.3.0
+ID: InsightHub
+description: A simple CAP project.
+version: 1.0.0
+modules:
+- name: InsightHub-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: InsightHub-auth
+  - name: InsightHub-connectivity
+  - name: InsightHub-destination
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+    instances: 1
+  build-parameters:
+    builder: npm-ci
+- name: InsightHub
+  type: approuter.nodejs
+  path: app/router
+  requires:
+  - name: srv-api
+    group: destinations
+    properties:
+      forwardAuthToken: true
+      name: srv-api
+      url: ~{srv-url}
+  - name: InsightHub-auth
+  - name: InsightHub-destination
+  provides:
+  - name: app-api
+    properties:
+      app-protocol: ${protocol}
+      app-uri: ${default-uri}
+  parameters:
+    disk-quota: 256M
+    keep-existing-routes: true
+    memory: 256M
+- name: InsightHub-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: InsightHub-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - studentsystem.zip
+      name: studentsystem
+      target-path: resources/
+- name: studentsystem
+  type: html5
+  path: app/studentsystem
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: InsightHub-auth
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      oauth2-configuration:
+        redirect-uris:
+        - https://*~{app-api/app-uri}/**
+      tenant-mode: dedicated
+      xsappname: InsightHub-${org}-${space}
+    path: ./xs-security.json
+    service: xsuaa
+    service-plan: application
+  requires:
+  - name: app-api
+- name: InsightHub-connectivity
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: connectivity
+    service-plan: lite
+- name: InsightHub-destination
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: false
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+    service: destination
+    service-plan: lite
+- name: InsightHub-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: InsightHub-html5-service
+    service-plan: app-host
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm ci
+    - npx cds build --production
