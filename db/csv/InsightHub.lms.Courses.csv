@@ -1,11 +1,11 @@
 ID,course_name,course_duration,course_price,published_status
-c1,Introduction to Programming,40.5,199.99,true
-c2,Data Science 101,60,499.50,true
-c3,Free Python Basics,15,0.00,true
-c4,AI Ethics,20.25,99.90,false
-c5,Blockchain Development,80,999.99,true
-c6,UX Design,0,50.00,true
-c7,Cybersecurity Advanced,120.75,899.95,true
-c8,Cooking Masterclass,10,75.00,false
-c9,Machine Learning,100,599.99,true
-c10,Empty Test Course,5,10.00,false
+3d6f0eb3-4c0b-3a3f-9e0f-2d8b2f8c9e5a,Introduction to Programming,40.5,199.99,true
+1b9d6bcd-bbfd-4b2d-9b6d-2d8b2f8c9e9f,Data Science 101,60,499.50,true
+e4eaaaf2-d142-11e1-b3e4-080027620cdd,Free Python Basics,15,0.00,true
+bd65600d-8669-4903-8a14-af88203add38,AI Ethics,20.25,99.90,false
+7c9e6679-7425-40de-944b-e07fc1f90ae8,Blockchain Development,80,999.99,true
+16fd2706-8baf-433b-82eb-8c7fada847db,UX Design,0,50.00,true
+9c858901-8a57-4791-81fe-4c455b099bd0,Cybersecurity Advanced,120.75,899.95,true
+550e8400-e29b-41d4-a716-446655440001,Cooking Masterclass,10,75.00,false
+f47ac10b-58cc-4372-a567-0e02b2c3d480,Machine Learning,100,599.99,true
+e902893a-9d22-3c7e-a7b8-d6e313b71d90,Empty Test Course,5,10.00,false

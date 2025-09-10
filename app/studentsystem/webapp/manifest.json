@@ -16,8 +16,8 @@
       "toolsId": "4f00da8b-7930-4af0-aaba-527c29400394"
     },
     "dataSources": {
-      "mainService": {
-        "uri": "/odata/v4/mysrvdemo/",
+      "lmsAppService": {
+        "uri": "/odata/v4/lmsAppService/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -64,7 +64,7 @@
         }
       },
       "": {
-        "dataSource": "mainService",
+        "dataSource": "lmsAppService",
         "preload": true,
         "settings": {
           "operationMode": "Server",
@@ -89,7 +89,7 @@
           "target": "StudentServiceList"
         },
         {
-          "pattern": "StudentService({key}):?query:",
+          "pattern": "GetStudent({key}):?query:",
           "name": "StudentServiceObjectPage",
           "target": "StudentServiceObjectPage"
         }
@@ -101,10 +101,10 @@
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "contextPath": "/StudentService",
+              "contextPath": "/GetStudent",
               "variantManagement": "Page",
               "navigation": {
-                "StudentService": {
+                "GetStudent": {
                   "detail": {
                     "route": "StudentServiceObjectPage"
                   }
@@ -127,7 +127,7 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/StudentService"
+              "contextPath": "/GetStudent"
             }
           }
         }

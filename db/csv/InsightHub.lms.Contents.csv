@@ -1,7 +1,7 @@
 ID,url,date_managed,content_type,course_ID
-cont1,https://cdn.example.com/course1/intro.pdf,2024-01-01T09:00:00Z,PDF,c1
-cont2,http://cdn.example.com/course2/lesson1.mp4,2024-03-01T10:00:00Z,Video,c2
-cont3,https://cdn.example.com/course3/quiz.html,2024-05-15T11:30:00Z,Quiz,c3
-cont4,cdn.example.com/invalid-url,2024-06-01T12:00:00Z,Doc,c4
-cont5,https://cdn.example.com/course5/slides.pptx,2024-07-07T14:00:00Z,PPT,c5
-cont6,https://cdn.example.com/course6/video.mp4,2024-09-09T16:00:00Z,Video,c6
+f8a3a1f4-2e5a-46e8-9df1-f94f6c2d5d8f,https://cdn.example.com/course1/intro.pdf,2024-01-01T09:00:00Z,PDF,3d6f0eb3-4c0b-3a3f-9e0f-2d8b2f8c9e5a
+6fa459ea-ee8a-3ca4-894e-db77e160355f,http://cdn.example.com/course2/lesson1.mp4,2024-03-01T10:00:00Z,Video,1b9d6bcd-bbfd-4b2d-9b6d-2d8b2f8c9e9f
+5df41881-3aed-3515-88a7-2f4a814cf09f,https://cdn.example.com/course3/quiz.html,2024-05-15T11:30:00Z,Quiz,e4eaaaf2-d142-11e1-b3e4-080027620cdd
+886313e1-3b8a-5372-9b90-0c9aee199e5e,cdn.example.com/invalid-url,2024-06-01T12:00:00Z,Doc,bd65600d-8669-4903-8a14-af88203add38
+16fd2706-8baf-433b-82eb-8c7fada847dc,https://cdn.example.com/course5/slides.pptx,2024-07-07T14:00:00Z,PPT,7c9e6679-7425-40de-944b-e07fc1f90ae8
+e902893a-9d22-3c7e-a7b8-d6e313b71d91,https://cdn.example.com/course6/video.mp4,2024-09-09T16:00:00Z,Video,16fd2706-8baf-433b-82eb-8c7fada847db

@@ -1,6 +1,6 @@
 using {InsightHub.lms as lms} from '../db/Schema.cds';
 
-service lmsApp {
+service lmsAppService @(path:'lmsAppService') {
     @readonly
     entity GetStudent as projection on lms.Students;
 

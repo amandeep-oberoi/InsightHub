@@ -1,5 +1,5 @@
-using mysrvdemo as service from '../../srv/mysimplesrv';
-annotate service.StudentService with @(
+using lmsAppService as lmsAppService from '../../srv/lmsappsrv.cds';
+annotate lmsAppService.GetStudent with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
         Data : [
@@ -11,17 +11,18 @@ annotate service.StudentService with @(
             {
                 $Type : 'UI.DataField',
                 Label : 'firstName',
-                Value : firstName,
+                Value : first_name,
             },
             {
                 $Type : 'UI.DataField',
                 Label : 'lastName',
-                Value : lastName,
+                Value : last_name,
             },
             {
                 $Type : 'UI.DataField',
-                Value : dateSignUp,
-            },
+                Label:'dateSignUp',
+                Value : date_sign_up,
+            }
         ],
     },
     UI.Facets : [
@@ -32,5 +33,28 @@ annotate service.StudentService with @(
             Target : '@UI.FieldGroup#GeneratedGroup',
         },
     ],
+    UI.LineItem:[
+        {
+                $Type : 'UI.DataField',
+                Label : 'Email',
+                Value : email,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'First name',
+                Value : first_name,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'Last name',
+                Value : last_name,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label:'Sign-Up date',
+                Value : date_sign_up,
+            }
+    ]
 );
+
 
