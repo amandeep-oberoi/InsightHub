@@ -13,7 +13,25 @@ service mysrvdemo {
 
     action deleteStudent(email:String) returns Boolean;
 
+
+    
+
     function myfoobar(firstName: String, lastName: String) returns String;
     function myfoobar2() returns String;
+
+
+
+
+//new service added in new Service file
+// extend service mysrvdemo with{
+//     entity GetCustomStudent as select from hrMs.Students{
+//         email,
+//         firstName,
+//         lastName,
+//         firstName||' '||lastName as fullName:String
+//     }
+// }
+
+
 
 }
