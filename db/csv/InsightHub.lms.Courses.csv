@@ -1,0 +1,11 @@
+ID,course_name,course_duration,course_price,published_status
+c1,Introduction to Programming,40.5,199.99,true
+c2,Data Science 101,60,499.50,true
+c3,Free Python Basics,15,0.00,true
+c4,AI Ethics,20.25,99.90,false
+c5,Blockchain Development,80,999.99,true
+c6,UX Design,0,50.00,true
+c7,Cybersecurity Advanced,120.75,899.95,true
+c8,Cooking Masterclass,10,75.00,false
+c9,Machine Learning,100,599.99,true
+c10,Empty Test Course,5,10.00,false

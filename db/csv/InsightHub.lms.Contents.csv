@@ -1,0 +1,7 @@
+ID,url,date_managed,content_type,course_ID
+cont1,https://cdn.example.com/course1/intro.pdf,2024-01-01T09:00:00Z,PDF,c1
+cont2,http://cdn.example.com/course2/lesson1.mp4,2024-03-01T10:00:00Z,Video,c2
+cont3,https://cdn.example.com/course3/quiz.html,2024-05-15T11:30:00Z,Quiz,c3
+cont4,cdn.example.com/invalid-url,2024-06-01T12:00:00Z,Doc,c4
+cont5,https://cdn.example.com/course5/slides.pptx,2024-07-07T14:00:00Z,PPT,c5
+cont6,https://cdn.example.com/course6/video.mp4,2024-09-09T16:00:00Z,Video,c6
