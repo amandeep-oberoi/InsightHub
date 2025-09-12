@@ -54,9 +54,23 @@ modules:
       - studentsystem.zip
       name: studentsystem
       target-path: resources/
+    - artifacts:
+      - shopverse.zip
+      name: shopverse
+      target-path: resources/
 - name: studentsystem
   type: html5
   path: app/studentsystem
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: shopverse
+  type: html5
+  path: app/shopverse
   build-parameters:
     build-result: dist
     builder: custom
@@ -97,9 +111,18 @@ resources:
             ProxyType: Internet
             Type: HTTP
             URL: https://ui5.sap.com
+          - Authentication: NoAuthentication
+            HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
+            Name: srv-api
+            ProxyType: Internet
+            Type: HTTP
+            URL: ~{srv-api/srv-url}
           existing_destinations_policy: update
     service: destination
     service-plan: lite
+  requires:
+  - name: srv-api
 - name: InsightHub-repo-host
   type: org.cloudfoundry.managed-service
   parameters:

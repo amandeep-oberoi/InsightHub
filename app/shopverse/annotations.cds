@@ -1,0 +1,1 @@
+using lmsAppService as service from '../../srv/lmsappsrv';

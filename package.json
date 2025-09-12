@@ -27,7 +27,8 @@
     "watch-studentsystem": "cds watch --open studentsystem/index.html?sap-ui-xx-viewCache=false --livereload false",
     "undeploy": "cf undeploy InsightHub --delete-services --delete-service-keys --delete-service-brokers",
     "build": "rimraf resources mta_archives && mbt build --mtar archive",
-    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-shopverse": "cds watch --open shopverse/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "cds": {
     "requires": {
