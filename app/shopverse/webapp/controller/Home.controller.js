@@ -7,6 +7,10 @@ sap.ui.define([
     return Controller.extend("shopverse.controller.Home", {
         onInit() {
             let aCategories =[
+              {
+                key: "Dashboard",
+                value: "Dashboard"
+                },
                 {
                 key: "Products",
                 value: "Products"
@@ -31,6 +35,16 @@ sap.ui.define([
 
     var oCategoriesModel = new JSONModel(aCategories);
 		this.getView().setModel(oCategoriesModel,"categoryModel");
+    this.displayContent(null);
+        },
+        displayContent(oEvent){
+          let oRoute;
+          if(!oEvent){
+            oRoute = 'Dashboard';
+          }else{
+            oRoute = oEvent.getParameter("item").getKey();
+          }
+          this.getOwnerComponent().getRouter().navTo(oRoute);
         }
 
         	

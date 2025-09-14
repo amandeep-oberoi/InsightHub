@@ -85,7 +85,8 @@
         "settings": {
           "operationMode": "Server",
           "autoExpandSelect": true,
-          "earlyRequests": true
+          "earlyRequests": true,
+          "useBatch":false
          
         }
       }
@@ -107,7 +108,8 @@
         "viewType": "XML",
         "path": "shopverse.view",
         "async": true,
-        "viewPath": "shopverse.view"
+        "viewPath": "shopverse.view",
+        "clearControlAggregation": true
       },
       "routes": [
         {
@@ -116,12 +118,40 @@
           "target": [
             "TargetHome"
           ]
+        },
+        {
+          "name": "Dashboard",
+          "pattern": "Dashboard",
+          "target": [
+            "Dashboard"
+          ]
+        },
+        {
+          "name": "Products",
+          "pattern": "Products",
+          "target": [
+            "Products"
+          ]
         }
       ],
       "targets": {
         "TargetHome": {
           "id": "Home",
           "name": "Home"
+        },
+        "Dashboard": {
+          "id": "Dashboard",
+          "name": "Dashboard",
+          "parent": "TargetHome",
+          "controlId": "showContent",
+          "controlAggregation": "pages"
+        },
+          "Products": {
+          "id": "Products",
+          "name": "Products",
+          "parent": "TargetHome",
+          "controlId": "showContent",
+          "controlAggregation": "pages"
         }
       }
     },
