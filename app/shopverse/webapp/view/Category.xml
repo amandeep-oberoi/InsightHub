@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="shopverse.controller.Home"
+    controllerName="shopverse.controller.Category"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:l="sap.ui.layout"
     xmlns="sap.m"
@@ -8,7 +8,7 @@
     xmlns:core="sap.ui.core"
 >
     <Page
-        id="DashboardPage"
+        id="page"
         title="{i18n>title}"
     >
         <content>
@@ -73,7 +73,6 @@
                         <f:header>
                             <card:Header
                                 title="Explore Categories"
-                                iconSrc="sap-icon://grid" 
                             />
                         </f:header>
                         <f:content>
@@ -108,7 +107,6 @@
                         <f:header>
                             <card:Header
                                 title="Explore Products"
-                                iconSrc="sap-icon://product" 
                             />
                         </f:header>
                         <f:content>
@@ -154,7 +152,6 @@
                         <f:header>
                             <card:Header
                                 title="List of Customers"
-                                iconSrc="sap-icon://customer" 
                             />
                         </f:header>
                         <f:content>
@@ -190,7 +187,6 @@
                         <f:header>
                             <card:Header
                                 title="List of Orders"
-                                iconSrc="sap-icon://cart"
                             />
                         </f:header>
                         <f:content>
@@ -232,7 +228,6 @@
                         <f:header>
                             <card:Header
                                 title="List of Suppliers"
-                                iconSrc="sap-icon://supplier" 
                             />
                         </f:header>
                         <f:content>

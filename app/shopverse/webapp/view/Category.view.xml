@@ -1,0 +1,94 @@
+<mvc:View
+    controllerName="shopverse.controller.Category"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="CategoryPage"
+        title="{i18n>title}"
+    >
+        <content>
+            <l:Splitter>
+                <Page>
+                    <layoutData>
+                        <l:SplitterLayoutData
+                            size="30%"
+                            resizable="false"
+                        />
+                    </layoutData>
+                    <Panel height="100%">
+                        <SelectList items="{
+						path: 'categoryModel>/'
+					}">
+                            <core:Item
+                                key="{categoryModel>key}"
+                                text="{categoryModel>value}"
+                            />
+                        </SelectList>
+                    </Panel>
+                </Page>
+                <Page>
+                    <layoutData>
+                        <l:SplitterLayoutData size="auto" />
+                    </layoutData>
+                    <Table
+                        id="idcategoryTable"
+                        inset="true"
+                        items="{
+			path: 'NorthwindModel>/Categories'
+		}">
+
+
+        	<columns>
+			<Column>
+			<Text text="Product" />
+			</Column>
+			<Column>
+			<Text text="Supplier" />
+			</Column>
+			<Column>
+			<Text text="Dimensions" />
+			</Column>
+			<Column>
+			<Text text="Weight" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle">
+				<cells>
+					<Text
+						text="{SupplierName}" />
+					<Text
+						text="{Width} x {Depth} x {Height} {DimUnit}" />
+					<ObjectNumber
+						number="{WeightMeasure}"
+						unit="{WeightUnit}"
+						state="{
+							parts: [
+								{path: 'WeightMeasure'},
+								{path: 'WeightUnit'}
+							],
+							formatter: '.formatter.weightState'
+						}" />
+					<ObjectNumber
+						number="{
+							parts:[{path:'Price'},{path:'CurrencyCode'}],
+							type: 'sap.ui.model.type.Currency',
+							formatOptions: {showMeasure: false}
+						}"
+						unit="{CurrencyCode}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+
+
+        </Table>
+                </Page>
+            </l:Splitter>
+        </content>
+    </Page>
+</mvc:View>
