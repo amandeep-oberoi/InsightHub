@@ -65,7 +65,7 @@
                                 />
 
                                 <ObjectStatus
-                                    text="UnitPrice: {NorthwindModel>UnitPrice}"
+                                    text="UnitPrice:  &#8377;{NorthwindModel>UnitPrice}"
                                     state="{
         path: 'NorthwindModel>UnitPrice',
         formatter: '.formatter.priceState'

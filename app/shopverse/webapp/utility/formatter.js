@@ -22,7 +22,7 @@ sap.ui.define([
             if (picture) {
                 return "data:image/bmp;base64," + picture.substring(104);
             }
-            return "sap-icon://picture";
+            return "No Picture";
 
         }
     };

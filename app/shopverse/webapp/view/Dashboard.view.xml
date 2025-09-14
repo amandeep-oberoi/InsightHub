@@ -77,12 +77,12 @@
                                                 level="H3"
                                                 text="{NorthwindModel>ProductName}"
                                             />
-                                            <Text text="{NorthwindModel>UnitPrice}" />
+                                            <Text text="UnitsInStock: {NorthwindModel>UnitsInStock}" />
                                         </VBox>
                                         <ObjectStatus
                                             class="sapUiTinyMargin sapUiSmallMarginEnd"
-                                            text="{NorthwindModel>UnitsInStock}"
-                                            state = "{=${NorthwindModel>UnitsInStock} > 10 ? 'Success':'Error'}"
+                                            text="&#8377;{NorthwindModel>UnitPrice}"
+                                            state = "{=${NorthwindModel>UnitPrice} > 10 ? 'Warning':'Success'}"
                                         />
                                     </HBox>
                                 </CustomListItem>
@@ -117,9 +117,9 @@
                                         >
                                             <Title
                                                 level="H3"
-                                                text="{NorthwindModel>CompanyName}"
+                                                text="CompanyName: {NorthwindModel>CompanyName}"
                                             />
-                                            <Text text="{NorthwindModel>ContactName}" />
+                                            <Text text="ContactName: {NorthwindModel>ContactName}" />
                                         </VBox>
                                        
                                 </CustomListItem>
@@ -153,9 +153,9 @@
                                         >
                                             <Title
                                                 level="H3"
-                                                text="{NorthwindModel>OrderID}"
+                                                text="ID: {NorthwindModel>OrderID}"
                                             />
-                                            <Text text="{NorthwindModel>OrderDate}" />
+                                            <Text text="Date: {NorthwindModel>OrderDate}" />
                                         </VBox>
                                 </CustomListItem>
                             </List>
@@ -184,22 +184,15 @@
 				}"
                             >
                                 <CustomListItem class="paddingClass">
-                                    <HBox
-                                        alignItems="Center"
-                                        justifyContent="SpaceBetween"
-                                    >
                                         <VBox
                                             class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"
                                         >
                                             <Title
                                                 level="H3"
-                                                text="{NorthwindModel>CompanyName}"
+                                                text="CompanyName: {NorthwindModel>CompanyName}"
                                             />
-                                            <Text text="{NorthwindModel>ContactName}" />
+                                            <Text text="ContactName: {NorthwindModel>ContactName}" />
                                         </VBox>
-                                        <Text text="{NorthwindModel>Country}" />
-
-                                    </HBox>
                                 </CustomListItem>
                             </List>
                         </f:content>
