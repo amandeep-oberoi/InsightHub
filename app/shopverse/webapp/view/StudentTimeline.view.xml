@@ -1,0 +1,35 @@
+<mvc:View
+    controllerName="shopverse.controller.StudentTimeline"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+    xmlns:core="sap.ui.core"
+    xmlns:c ="sap.suite.ui.commons"
+>
+    <Page
+        id="Timeline"
+        title="{i18n>title}"
+    >
+          	<c:Timeline
+			id="idTimeline"
+			enableDoubleSided="true"
+			groupBy="HireDate"
+			growingThreshold="0"
+			filterTitle="Job Title"
+			sortOldestFirst="true"
+			content="{mynewservice>/GetStudent}">
+		<c:content>
+			<c:TimelineItem
+					id="idTemplateItem"
+					dateTime="{mynewservice>dateSignUp}"
+					text="{mynewservice>email}"
+					userName="{mynewservice>firstName}"
+					>
+			</c:TimelineItem>
+		</c:content>
+	</c:Timeline>
+        
+    </Page>
+</mvc:View>

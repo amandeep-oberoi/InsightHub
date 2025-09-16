@@ -30,6 +30,10 @@ sap.ui.define([
                  {
                 key: "Suppliers",
                 value: "Suppliers"
+                },
+                 {
+                key: "Timeline",
+                value: "Timeline"
                 }
         ]
 

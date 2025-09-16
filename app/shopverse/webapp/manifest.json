@@ -31,6 +31,14 @@
           "annotations": [],
           "odataVersion": "2.0"
         }
+      },
+      "mynewservice": {
+        "uri": "/odata/v4/mynewservice/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
       }
     }
   },
@@ -89,6 +97,16 @@
           "useBatch":false
          
         }
+      },
+       "mynewservice": {
+        "dataSource": "mynewservice",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+         
+        }
       }
     },
     "resources": {
@@ -132,6 +150,13 @@
           "target": [
             "Products"
           ]
+        },
+         {
+          "name": "Timeline",
+          "pattern": "Timeline",
+          "target": [
+            "Timeline"
+          ]
         }
       ],
       "targets": {
@@ -149,6 +174,13 @@
           "Products": {
           "id": "Products",
           "name": "Products",
+          "parent": "TargetHome",
+          "controlId": "showContent",
+          "controlAggregation": "pages"
+        },
+        "Timeline": {
+          "id": "Timeline",
+          "name": "StudentTimeline",
           "parent": "TargetHome",
           "controlId": "showContent",
           "controlAggregation": "pages"

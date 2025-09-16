@@ -5,11 +5,9 @@ using { cuid,managed  } from '@sap/cds/common';
 entity Students : cuid,managed{
      email : String;
      firstName: String;
-
      @cds.api.ignore
      lastName : String;
-     
-     dateSignUp : type of managed:createdAt;
+     dateSignUp : Date;
 }
 
 // annotate Students with @(
