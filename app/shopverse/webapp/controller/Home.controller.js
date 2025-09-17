@@ -16,7 +16,7 @@ sap.ui.define([
                 value: "Products"
                 },
                   {
-                key: "Categories",
+                key: "Category",
                 value: "Categories"
                 },
                   {

@@ -157,6 +157,13 @@
           "target": [
             "Timeline"
           ]
+        },
+         {
+          "name": "Category",
+          "pattern": "Category",
+          "target": [
+            "Category"
+          ]
         }
       ],
       "targets": {
@@ -181,6 +188,13 @@
         "Timeline": {
           "id": "Timeline",
           "name": "StudentTimeline",
+          "parent": "TargetHome",
+          "controlId": "showContent",
+          "controlAggregation": "pages"
+        },
+          "Category": {
+          "id": "Category",
+          "name": "Category",
           "parent": "TargetHome",
           "controlId": "showContent",
           "controlAggregation": "pages"
