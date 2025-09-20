@@ -164,6 +164,13 @@
           "target": [
             "Category"
           ]
+        },
+         {
+          "name": "Orders",
+          "pattern": "Orders",
+          "target": [
+            "Orders"
+          ]
         }
       ],
       "targets": {
@@ -195,6 +202,13 @@
           "Category": {
           "id": "Category",
           "name": "Category",
+          "parent": "TargetHome",
+          "controlId": "showContent",
+          "controlAggregation": "pages"
+        },
+        "Orders": {
+          "id": "Orders",
+          "name": "Orders",
           "parent": "TargetHome",
           "controlId": "showContent",
           "controlAggregation": "pages"
